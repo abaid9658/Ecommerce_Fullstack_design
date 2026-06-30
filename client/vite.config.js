@@ -27,15 +27,6 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     sourcemap: false,
-    // Chunk splitting for better caching in production
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          router: ['react-router'],
-        },
-      },
-    },
   },
   // Environment variable prefix exposed to client
   envPrefix: 'VITE_',
