@@ -1,0 +1,125 @@
+.filter-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filter-group {
+  border-top: 1px solid var(--border-color);
+  padding: 16px 0;
+}
+
+.filter-group:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.filter-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.filter-group-header h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Category list styles */
+.filter-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.category-item {
+  font-size: 14px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all var(--transition-speed);
+}
+
+.category-item:hover, 
+.category-item.active {
+  background-color: #E5F1FF;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+/* Checkbox and radio lists */
+.filter-checkbox-list,
+.filter-radio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkbox-label,
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.checkbox-text,
+.radio-text {
+  user-select: none;
+}
+
+/* Price range inputs */
+.price-range-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.price-inputs {
+  display: flex;
+  gap: 8px;
+}
+
+.price-inputs input {
+  height: 38px;
+  padding: 0 10px;
+}
+
+.apply-price-btn {
+  width: 100%;
+  height: 38px;
+  font-weight: 600;
+}
+
+/* Rating selectors */
+.filter-ratings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rating-row-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.rating-row-item:hover,
+.rating-row-item.active {
+  background-color: var(--secondary-color);
+}
+
+.stars-holder {
+  display: flex;
+  align-items: center;
+}

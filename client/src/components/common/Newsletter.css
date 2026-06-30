@@ -1,0 +1,82 @@
+.newsletter-section {
+  background-color: #EFF2F4;
+  padding: 40px 0;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.newsletter-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.newsletter-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.newsletter-subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 460px;
+}
+
+.newsletter-input-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.mail-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 18px;
+}
+
+.newsletter-input {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px 0 40px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background-color: var(--white);
+}
+
+.newsletter-btn {
+  height: 40px;
+  padding: 0 24px;
+}
+
+.subscribed-success {
+  background-color: #E3F9E5;
+  color: var(--success-color);
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  border: 1px solid var(--success-color);
+}
+
+@media (max-width: 576px) {
+  .newsletter-form {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .newsletter-btn {
+    width: 100%;
+  }
+}

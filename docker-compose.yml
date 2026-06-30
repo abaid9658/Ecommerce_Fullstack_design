@@ -1,0 +1,44 @@
+version: '3.9'
+
+services:
+  mongo:
+    image: mongo:7
+    container_name: ecommerce_mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: ecommerce
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - ecommerce_net
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ecommerce_api
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: 5000
+      MONGO_URI: mongodb://mongo:27017/ecommerce
+      JWT_ACCESS_SECRET: ${JWT_ACCESS_SECRET}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET}
+      CLIENT_URL: ${CLIENT_URL}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    networks:
+      - ecommerce_net
+    volumes:
+      - uploads_data:/app/server/uploads
+
+volumes:
+  mongo_data:
+  uploads_data:
+
+networks:
+  ecommerce_net:
+    driver: bridge
